@@ -35,7 +35,7 @@ public class NotificationService extends FirebaseMessagingService {
 
     }
 
-    public void enviarNotificacion(RemoteMessage remoteMessage){
+    public void enviarNotificacion(RemoteMessage remoteMessage) {
 
         Intent i = new Intent(this, MainActivity.class);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, i, PendingIntent.FLAG_ONE_SHOT);
@@ -48,8 +48,7 @@ public class NotificationService extends FirebaseMessagingService {
                 .setContentText(remoteMessage.getNotification().getBody())
                 .setAutoCancel(true)
                 .setSound(sonido)
-                .setContentIntent(pendingIntent)
-                ;
+                .setContentIntent(pendingIntent);
 
         NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         notificationManager.notify(0, notificacion.build());

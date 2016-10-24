@@ -9,7 +9,6 @@ import android.widget.TextView;
 import com.dzrmsd.programreactive.R;
 import com.dzrmsd.programreactive.dao.TaskDAO;
 import com.dzrmsd.programreactive.pojos.Task;
-import com.dzrmsd.programreactive.reactive.Reactive;
 import com.google.firebase.crash.FirebaseCrash;
 
 import java.util.List;
@@ -43,7 +42,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void bind() {
-        Reactive.reactive();
         new TaskDAO(getBaseContext()).getTaskList()
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(

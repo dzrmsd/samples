@@ -1,7 +1,7 @@
 package com.dzrmsd.programreactive.ui;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -24,11 +24,11 @@ public class AddSomethingActivity extends AppCompatActivity {
         etTitleTask = (EditText) findViewById(R.id.etTitleTask);
         etBodyTask = (EditText) findViewById(R.id.etDetailTask);
         btnAddTask = (Button) findViewById(R.id.addTask);
-        btnAddTask.setOnClickListener( __ -> saveTask());
+        btnAddTask.setOnClickListener(__ -> saveTask());
     }
 
-    private void saveTask(){
-        if(etTitleTask.getText().toString().isEmpty() && etBodyTask.getText().toString().isEmpty())
+    private void saveTask() {
+        if (etTitleTask.getText().toString().isEmpty() && etBodyTask.getText().toString().isEmpty())
             return;
         new TaskDAO(getBaseContext()).saveNote(etTitleTask.getText().toString(), etBodyTask.getText().toString());
         this.finish();

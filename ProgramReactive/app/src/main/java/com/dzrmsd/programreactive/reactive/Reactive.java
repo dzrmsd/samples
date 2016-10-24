@@ -39,7 +39,9 @@ public class Reactive {
         * */
 
         Observable.just("Hello!")
-                .map(input -> { throw new RuntimeException(); })
+                .map(input -> {
+                    throw new RuntimeException();
+                })
                 .subscribe(
                         System.out::println,
                         error -> System.out.println("Error!")
